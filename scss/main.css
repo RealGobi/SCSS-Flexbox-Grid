@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 60px 300px 210px 180px auto;
+      grid-template-rows: 60px 300px 210px 180px auto;
+      grid-template-areas: "header header header header" "hero hero hero hero" "box-1 box-2 box-2 box-3" "box-1 box-4 box-5 box-5" "gallery gallery gallery gallery";
+  max-width: 1000px;
+  width: 100%;
+}
+
+body main header {
+  background: #7c7c7c;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main header .logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: orangered;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main header .logo .circle {
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  border-radius: 999rem;
+  margin: 1rem;
+  border: 3px solid violet;
+  -webkit-box-shadow: 1px 1px 3px #888888;
+          box-shadow: 1px 1px 3px #888888;
+}
+
+body main header nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main header nav a {
+  margin: .75rem;
+}
+
+body main .hero {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: hero;
+  background: peachpuff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background: pink url(../assets/bild.jpg);
+  background-size: cover;
+  background-position: center 15%;
+}
+
+body main .hero h1 {
+  margin: 2rem;
+  color: #fff;
+}
+
+body main .box-1 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: box-1;
+  background: gold;
+}
+
+body main .box-2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: box-2;
+  background: lawngreen;
+}
+
+body main .box-3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: box-3;
+  background: firebrick;
+}
+
+body main .box-4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: box-4;
+  background: khaki;
+}
+
+body main .box-5 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: box-5;
+  background: darkgoldenrod;
+}
+
+body main .gallery {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: gallery;
+  background: palevioletred;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: inherit;
+      grid-template-columns: inherit;
+  grid-auto-rows: 240px;
+  grid-gap: .5rem;
+  padding: .5rem;
+}
+
+body main .gallery article {
+  background: lightpink;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .gallery article .img {
+  background: purple;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body main .gallery article footer {
+  background: violet;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer {
+  background: burlywood;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body footer .footer {
+  max-width: 1000px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: .5rem;
+}
+
+body footer .footer article {
+  padding: 1rem;
+}
+
+body footer .footer h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  body main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 120px 300px 210px 210px 210px 210px 210px 0px;
+        grid-template-rows: 120px 300px 210px 210px 210px 210px 210px 0px;
+        grid-template-areas: "header" "hero" "box-1"  "box-2" "box-3" "box-4" "box-5"  "gallery";
+  }
+  body main .hero h1 {
+    font-size: 1.3rem;
+  }
+  body main header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main header nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body main .gallery {
+    overflow: hidden;
+  }
+  body footer .footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+/*# sourceMappingURL=main.css.map */

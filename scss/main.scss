@@ -1,0 +1,188 @@
+$baseline: 4px;
+
+body {
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows:$baseline*2 $baseline*10 $baseline*7 $baseline*6 auto;
+        grid-template-areas: 
+        "header header header header"
+        "hero hero hero hero"
+        "box-1 box-2 box-2 box-3"
+        "box-1 box-4 box-5 box-5"
+        "gallery gallery gallery gallery";
+        max-width: 1000px;
+        width: 100%;
+
+        header {
+            background: rgb(124, 124, 124);
+            grid-area: header;
+            display: flex;
+
+            .logo {
+                flex:1;
+                background: orangered;
+                display: flex;
+                align-items: center;
+
+                .circle {
+                    width:2rem;
+                    height: 2rem;
+                    background: #fff;
+                    border-radius: 999rem;
+                    margin: 1rem;
+                    border: 3px solid violet;
+                    box-shadow: 1px 1px 3px #888888; 
+                }
+            }
+
+            nav {
+                flex:1;
+                background: black;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                
+                a {
+                    margin: .75rem;
+                }
+            }
+        }
+        .hero {
+            grid-area: hero;
+            background: peachpuff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background: pink url(../assets/bild.jpg);
+            // Photo by Tom Roberts on Unsplash
+            background-size: cover;
+            background-position: center 15%;
+
+
+            h1 {
+                margin: 2rem;
+                color: #fff;
+            }
+        }
+        .box-1{
+            grid-area: box-1;
+            background: gold;
+        }
+        .box-2{
+            grid-area: box-2;
+            background: lawngreen;
+        }
+        .box-3{
+            grid-area: box-3;
+            background: firebrick;
+        }
+        .box-4{
+            grid-area: box-4;
+            background: khaki;
+        }
+        .box-5{
+            grid-area: box-5;
+            background: darkgoldenrod;
+        }
+        .gallery {
+            grid-area: gallery;
+            background: palevioletred;
+            display: grid;
+            grid-template-columns: inherit;
+            grid-auto-rows: $baseline*8;
+            grid-gap: .5rem;
+            padding: .5rem;
+
+            article {
+                background: lightpink;
+                display: flex;
+                flex-direction: column;
+
+                .img{
+                    background: purple;
+                    flex:1;
+                }
+
+                footer {
+                    background: violet;
+                    height: $baseline*2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    footer {
+        background: burlywood;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .footer {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: .5rem;
+
+            article {
+                padding: 1rem;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+        }
+    }
+    
+    @media screen and (max-width: 480px){
+        
+        main {
+            grid-template-columns: 1fr;
+            grid-template-rows:$baseline*4 $baseline*10 $baseline*7 $baseline*7 $baseline*7 $baseline*7 $baseline*7 0px;
+            grid-template-areas: 
+            "header"
+            "hero"
+            "box-1" 
+            "box-2"
+            "box-3"
+            "box-4"
+            "box-5" 
+            "gallery";
+
+            .hero{
+                h1 {
+                    font-size: 1.3rem;
+                }
+            }
+
+            header {
+                flex-direction: column;
+
+                nav {
+                    justify-content: center;
+                }
+            }
+            
+            .gallery {
+                overflow: hidden;
+            }
+            
+        }
+    footer {
+        .footer{
+            grid-template-columns: 1fr;
+        }
+    }
+    }
+}
